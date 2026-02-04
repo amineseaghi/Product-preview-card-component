@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,700&display=swap');
+
+
+:root {
+    --cream-color :  hsl(30, 38%, 92%);
+    --dark-cyan :  hsl(158, 36%, 37%);
+    --dark-blue :  hsl(212, 21%, 14%);
+    --dark-gray : hsl(228, 12%, 48%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+   font-family: "Montserrat", sans-serif;
+   background: var(--cream-color);
+   min-width: 100vh;
+   display: grid;
+   place-content: center;
+}
+
+#Product {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 600px;
+    margin: 1rem;
+}
+
+img, picture {
+    display: block;
+    max-width: 100%;
+}
+
+#Product img {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#Product .product-content {
+    background-color: #fff;
+    padding: 2rem;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#Product .product-content .category {
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: hsl(228, 12%, 48%);
+}
+
+#Product .product-content h1 {
+    font-family: "Fraunces", serif;
+    font-size: 32px;
+    margin: 20px 0;
+    line-height: 1;
+    color: var(--dark-blue);
+}
+
+#Product .product-content p {
+    font-size: 14px;
+    color: var(--dark-gray);
+    line-height: 1.5;
+}
+
+#Product .product-content .Price {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#Product .product-content .Price .discount-price {
+    font-size: 30px;
+    font-family: "Fraunces", serif;
+    color: var(--dark-cyan);
+    margin-right: 20px;
+}
+
+#Product .product-content .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--dark-cyan);
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#Product .product-content .card::before {
+    content: "";
+    background: url('./images/icon-cart.svg');
+    width: 15px;
+    height: 16px;
+    margin-right: 10px;
+}
+
+@media (max-width: 700px) {
+    #Product {
+        grid-template-columns: 1fr;
+    }
+    #Product img {
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
+    }
+    #Product .product-content {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 10px;
+    }
+}
